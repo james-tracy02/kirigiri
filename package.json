@@ -1,0 +1,24 @@
+{
+  "name": "kirigiri",
+  "version": "1.0.0",
+  "description": "Discord bot for searching google images",
+  "main": "kirigiri.js",
+  "scripts": {
+    "start": "nodemon kirigiri.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/james-tracy02/kirigiri.git"
+  },
+  "author": "James Tracy",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/james-tracy02/kirigiri/issues"
+  },
+  "homepage": "https://github.com/james-tracy02/kirigiri#readme",
+  "dependencies": {
+    "discord.js": "^11.5.1",
+    "dotenv": "^8.2.0",
+    "nodemon": "^2.0.2"
+  }
+}
