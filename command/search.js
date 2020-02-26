@@ -21,6 +21,6 @@ module.exports = {
   },
 
   execute: function (msg, args) {
-    // do stuff
+    msg.channel.send(`Results for ${args.keyword}`);
   }
 };
