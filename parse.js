@@ -6,7 +6,8 @@ const ID_REGEXP = /<a?:[\w|\d]*:(\d*)>/;
 const EMOJI_REGEXP = /<a?:[\w|\d]*:\d*>/g;
 
 function tokenize(message) {
-  const matches = [...message.matchAll(/[^\s\"]+|\"([^\"]+)\"/g)];
+
+  const matches = [...message.replace(/[\u201C\u201D]/g, '"').matchAll(/[^\s\"]+|\"([^\"]+)\"/g)];
   return matches.map((match) => {
     if(match[1]) return match[1];
     return match[0];

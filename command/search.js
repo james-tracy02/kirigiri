@@ -28,7 +28,6 @@ module.exports = {
     (err, res, body) => {
       if(err) msg.channel.send('Something went wrong.');
       const { items } = JSON.parse(body);
-      console.log(items);
       if(items.length === 0) return msg.channel.send('No results!');
       msg.channel.send(items[0].link);
     });
