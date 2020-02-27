@@ -19,7 +19,7 @@ module.exports = {
     .setTitle(`Kirigiri Bot | Prefix ${configs.prefix}`)
     .setAuthor('Search Bot', msg.client.user.avatarURL)
     .setDescription(
-      'I let you quickly search fo images.\n\n' +
+      'I let you quickly search for images.\n\n' +
       '**Commands**\n' +
       '*Say* `k.info <command>` *to find out more!*\n\n' +
       print.commands(commands))
