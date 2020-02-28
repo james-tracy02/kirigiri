@@ -17,7 +17,7 @@ function tokenize(message) {
 function getMeta(name) {
   if (!name) return null;
   const cmd = commands[name]
-  || Object.keys(commands).find((cmdName) => commands[cmdName].meta.aliases.includes(name));
+  || commands[Object.keys(commands).find((cmdName) => commands[cmdName].meta.aliases.includes(name))];
   if (!cmd) return null;
   return cmd.meta;
 }

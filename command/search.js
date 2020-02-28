@@ -24,12 +24,18 @@ module.exports = {
   },
 
   execute: async function (msg, args) {
-    request.get(`${configs.searchURL}&key=${process.env.IMG_API_KEY}&q=${args.keyword}&searchType=image&num=1`,
+    request.get(`${configs.searchURL}&key=${process.env.IMG_API_KEY}&q=${args.keyword}&searchType=image`,
     (err, res, body) => {
       if(err) msg.channel.send('Something went wrong.');
       const { items } = JSON.parse(body);
       if(items.length === 0) return msg.channel.send('No results!');
-      msg.channel.send(items[0].link);
+      const i = Math.floor(Math.random() * items.length);
+
+      msg.channel.send(new RichEmbed()
+        .setColor(configs.color)
+        .setTitle(items[i].snippet)
+        .setURL(items[i].link)
+        .setImage(items[i].link));
     });
   }
 };
